@@ -24,12 +24,40 @@
           content: ' ';
           position: fixed;
           top: 0;
-          background: url('/img/bg.jpg') center 0 no-repeat;
+          background: url('/img/bg01.webp') center 0 no-repeat;
           right: 0;
           bottom: 0;
           left: 0;
           background-size: cover; 
+		  animation:fateimg 4800s linear infinite;
         }
+		@keyframes fateimg{
+        0%{background: url('/img/bg01.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        11%{background: url('/img/bg01.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        12%{background: url('/img/bg01.webp');opacity: 0;background-repeat: no-repeat;background-size:cover ;}
+        13%{background: url('/img/bg02.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        23%{background: url('/img/bg02.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        24%{background: url('/img/bg02.webp');opacity: 0;background-repeat: no-repeat;background-size:cover ;}
+        25%{background: url('/img/bg03.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        35%{background: url('/img/bg03.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        36%{background: url('/img/bg03.webp');opacity: 0;background-repeat: no-repeat;background-size:cover ;}
+        37%{background: url('/img/bg04.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        47%{background: url('/img/bg04.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        48%{background: url('/img/bg04.webp');opacity: 0;background-repeat: no-repeat;background-size:cover ;}
+        49%{background: url('/img/bg05.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        59%{background: url('/img/bg05.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        60%{background: url('/img/bg05.webp');opacity: 0;background-repeat: no-repeat;background-size:cover ;}
+        61%{background: url('/img/bg06.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        72%{background: url('/img/bg06.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        73%{background: url('/img/bg06.webp');opacity: 0;background-repeat: no-repeat;background-size:cover ;}
+        74%{background: url('/img/bg07.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        85%{background: url('/img/bg07.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        86%{background: url('/img/bg07.webp');opacity: 0;background-repeat: no-repeat;background-size:cover ;}
+        87%{background: url('/img/bg08.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        98%{background: url('/img/bg08.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+        99%{background: url('/img/bg08.webp');opacity: 0;background-repeat: no-repeat;background-size:cover ;}
+        100%{background: url('/img/bg01.webp');opacity: 1;background-repeat: no-repeat;background-size:cover ;}
+    }
     </style>
 
 			    
@@ -186,84 +214,26 @@
 
             <!-- Post Comments -->
             
-    <!-- 使用 DISQUS_CLICK -->
-<div id="disqus-comment">
-    <div id="disqus_thread"></div>
-
-<!-- add animation -->
-<style>
-	.disqus_click_btn {
-            line-height: 30px;
-            margin: 0;
-            min-width: 50px;
-            padding: 0 14px;
-            display: inline-block;
-            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0;
-            overflow: hidden;
-            will-change: box-shadow;
-            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
-            outline: 0;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            vertical-align: middle;
-            border: 0;
-            background: rgba(158, 158, 158, .2);
-            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-            color: #fff;
-            background-color: #7EC0EE;
-            text-shadow: 0
-        }
-</style>
-	
-<div class="btn_click_load" id="disqus_bt"> 
-    <button class="disqus_click_btn">点击查看评论</button>
-</div>
-
-<!--
-<script type="text/javascript">
-$('.btn_click_load').click(function() {
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-    document.getElementById('disqus_bt').style.display = "none";
-});
-</script>
--->
-<script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://github.com/lz632339942/about/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://github.com/lz632339942/about/index.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-</script>
-
-<script type="text/javascript">
-    $('.btn_click_load').click(function() {  //click to load comments
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document;
-            var s = d.createElement('script');
-            s.src = '//http-miccall-tech.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', + new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-        $('.btn_click_load').css('display','none');
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: true,
+        verify: false,
+        app_id: 'fYqe4Qi8CAWvxUTnK8pj1rxl-gzGzoHsz',
+        app_key: 'Kp3yDvgYtVp355y6KBo6pQzj',
+        placeholder: 'Please leave your footprints',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/'
     });
 </script>
 </div>
 <style>
-    #disqus-comment{
-        background-color: #eee;
+   #comment{
         padding: 2pc;
     }
 </style>
@@ -273,8 +243,8 @@ $('.btn_click_load').click(function() {
         <!-- Copyright 版权 start -->
                 <div id="copyright">
             <ul>
-                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
-                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+                <li>&copy;Powered By <a href="https://github.com/lz632339942" target="_blank" style="border-bottom: none;">LZ</a></li>
+                <li>Templates: <a href="https://github.com/miccall" target="_blank" style="border-bottom: none;">miccall</a></li>
             </ul>
             
             	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
