@@ -868,6 +868,8 @@
 				position: relative;
 				border: 0;
 				outline: 0;
+				height:110px;
+				overflow:hidden;
 			}
 
 				#gallery_thumbnails article .thumbnail img {
