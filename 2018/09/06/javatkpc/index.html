@@ -192,101 +192,101 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="JAVA编写的图片爬虫"><a href="#JAVA编写的图片爬虫" class="headerlink" title="JAVA编写的图片爬虫"></a><strong>JAVA编写的图片爬虫</strong></h1><h2 id="用于本博客的图库建设，爬取网站为蜂鸟摄影"><a href="#用于本博客的图库建设，爬取网站为蜂鸟摄影" class="headerlink" title="用于本博客的图库建设，爬取网站为蜂鸟摄影"></a><strong>用于本博客的图库建设，爬取网站为蜂鸟摄影</strong></h2><h3 id="直接上代码吧，在下萌新，各位高手多多指导"><a href="#直接上代码吧，在下萌新，各位高手多多指导" class="headerlink" title="直接上代码吧，在下萌新，各位高手多多指导"></a><strong>直接上代码吧，在下萌新，各位高手多多指导</strong></h3><h4 id="使用此代码需要导入的jar包会在后面补图"><a href="#使用此代码需要导入的jar包会在后面补图" class="headerlink" title="使用此代码需要导入的jar包会在后面补图"></a><strong>使用此代码需要导入的jar包会在后面补图</strong></h4><pre class=" language-JAVA"><code class="language-JAVA">package Github.lz632339942.io;
+                <h1 id="JAVA编写的图片爬虫"><a href="#JAVA编写的图片爬虫" class="headerlink" title="JAVA编写的图片爬虫"></a><strong>JAVA编写的图片爬虫</strong></h1><h2 id="用于本博客的图库建设，爬取网站为蜂鸟摄影"><a href="#用于本博客的图库建设，爬取网站为蜂鸟摄影" class="headerlink" title="用于本博客的图库建设，爬取网站为蜂鸟摄影"></a><strong>用于本博客的图库建设，爬取网站为蜂鸟摄影</strong></h2><h3 id="直接上代码吧，爬虫新手，各位高手多多指导"><a href="#直接上代码吧，爬虫新手，各位高手多多指导" class="headerlink" title="直接上代码吧，爬虫新手，各位高手多多指导"></a><strong>直接上代码吧，爬虫新手，各位高手多多指导</strong></h3><h4 id="使用此代码需要导入的jar包会在后面补图"><a href="#使用此代码需要导入的jar包会在后面补图" class="headerlink" title="使用此代码需要导入的jar包会在后面补图"></a><strong>使用此代码需要导入的jar包会在后面补图</strong></h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> Github<span class="token punctuation">.</span>lz632339942<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.util.HashSet;
-import java.util.List;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-
-
-public class fnpc {
-
-    public static void main(String[] args) throws Exception {
-        fnpc a = new fnpc();
-        a.getHtml();
-    }
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileOutputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>OutputStreamWriter<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashSet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>Jsoup<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>Document<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>Element<span class="token punctuation">;</span>
 
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public void getHtml() throws Exception{
-        ImgDown xz = new ImgDown();
-        HashSet pdcm = new HashSet();
-        Document doc = Jsoup.connect("https://photo.fengniao.com/f_595.html").get();
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">fnpc</span> <span class="token punctuation">{</span>
 
-        //获取元素节点等,观察爬取网页的HTML源代码
-        List<Element> infoListEle = doc.getElementsByAttributeValue("class", "noRight");
-        infoListEle.forEach(element -> {
-            System.out.println(element.getElementsByAttributeValue("class", "txtBox overOneTxt").first().getElementsByAttributeValue("class", "title").text());
-            String title = element.getElementsByAttributeValue("class", "txtBox overOneTxt").first().getElementsByAttributeValue("class", "title").text();
-
-            //这里判断名字是否重复，重复会在后面加一个6位的随机数，博客书写需要
-            if (!(pdcm.add(title)))title = title + "NO."+(int)(Math.random() * 1000000);  
-
-            //去除名字中的“:”符号，博客书写需要
-            title = title.replace(":", "");
-
-            System.out.println(element.getElementsByAttributeValue("class", "txtBox overOneTxt").first().getElementsByAttributeValue("class", "peopleName overOneTxt").text());
-            String zz = element.getElementsByAttributeValue("class", "txtBox overOneTxt").first().getElementsByAttributeValue("class", "peopleName overOneTxt").text();
-            System.out.println(element.getElementsByAttributeValue("class", "pic").attr("style"));
-            String url= element.getElementsByAttributeValue("class", "pic").attr("style");
-
-            //由于获取的图片链接中包括background-image: url('')和一些后缀，前后格式固定，所以直接提取中间的url
-            url = url.substring(23, url.length()-43);
-
-            //将得到的名字作者以及图片url处理成博客需要的格式
-            //String Makedown = title+":\n  full_link: "+url+"\n  thumb_link: "+url+"\n  descr: "+zz;
-            String Makedown = title+":\n  full_link: /images/tk"+url.substring(url.lastIndexOf("/"))+"\n  thumb_link: /images/tk"+url.substring(url.lastIndexOf("/"))+"\n  descr: "+zz;
-
-            //将内容写到文件里面
-            writeFile("D:\\HEXO\\HEXO\\source\\_data\\gallery.yml",Makedown);
-
-            //下载图片，另外写了一个类 ImgDown
-            xz.downImages("D:\\HEXO\\HEXO\\themes\\hexo-theme-Mic_Theme\\source\\images\\tk", url);   
-
-        });
-    }
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        fnpc a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">fnpc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">.</span><span class="token function">getHtml</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
 
-    //此处作用是把处理后的字符串写入文件
-    public static void writeFile(String fileFullPath,String content) {
-        //刚开始FileOutputStream中文会乱码，所以换成OutputStreamWriter
-        //FileOutputStream fos = null;          
-        OutputStreamWriter oStreamWriter = null;
-        try {
-            //true不覆盖已有内容
-            //fos = new FileOutputStream(fileFullPath, true);
-            oStreamWriter = new OutputStreamWriter(new FileOutputStream(fileFullPath, true), "utf-8");
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">"rawtypes"</span><span class="token punctuation">,</span> <span class="token string">"unchecked"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getHtml</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
+        ImgDown xz <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ImgDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        HashSet pdcm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Document doc <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">"https://photo.fengniao.com/f_595.html"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            //写入
-            //fos.write(content.getBytes());
-            oStreamWriter.append(content);
+        <span class="token comment" spellcheck="true">//获取元素节点等,观察爬取网页的HTML源代码</span>
+        List<span class="token operator">&lt;</span>Element<span class="token operator">></span> infoListEle <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"noRight"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        infoListEle<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>element <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>element<span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"txtBox overOneTxt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"title"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String title <span class="token operator">=</span> element<span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"txtBox overOneTxt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"title"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            // 写入一个换行
-            //fos.write("\r\n\r\n".getBytes());
-            oStreamWriter.append("\r\n\r\n");  
+            <span class="token comment" spellcheck="true">//这里判断名字是否重复，重复会在后面加一个6位的随机数，博客书写需要</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>pdcm<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>title <span class="token operator">=</span> title <span class="token operator">+</span> <span class="token string">"NO."</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
 
-        }catch (IOException e) {
-            e.printStackTrace();
-        }finally{
-            if(oStreamWriter != null){
-                try {
-                    //fos.flush();
-                    oStreamWriter.flush();
-                    //fos.close(); 
-                    oStreamWriter.close();
+            <span class="token comment" spellcheck="true">//去除名字中的“:”符号，博客书写需要</span>
+            title <span class="token operator">=</span> title<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">":"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-}
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>element<span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"txtBox overOneTxt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"peopleName overOneTxt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String zz <span class="token operator">=</span> element<span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"txtBox overOneTxt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"peopleName overOneTxt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>element<span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"pic"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"style"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String url<span class="token operator">=</span> element<span class="token punctuation">.</span><span class="token function">getElementsByAttributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">,</span> <span class="token string">"pic"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"style"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//由于获取的图片链接中包括background-image: url('')和一些后缀，前后格式固定，所以直接提取中间的url</span>
+            url <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">,</span> url<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">43</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//将得到的名字作者以及图片url处理成博客需要的格式</span>
+            <span class="token comment" spellcheck="true">//String Makedown = title+":\n  full_link: "+url+"\n  thumb_link: "+url+"\n  descr: "+zz;</span>
+            String Makedown <span class="token operator">=</span> title<span class="token operator">+</span><span class="token string">":\n  full_link: /images/tk"</span><span class="token operator">+</span>url<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\n  thumb_link: /images/tk"</span><span class="token operator">+</span>url<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\n  descr: "</span><span class="token operator">+</span>zz<span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//将内容写到文件里面</span>
+            <span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token string">"D:\\HEXO\\HEXO\\source\\_data\\gallery.yml"</span><span class="token punctuation">,</span>Makedown<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//下载图片，另外写了一个类 ImgDown</span>
+            xz<span class="token punctuation">.</span><span class="token function">downImages</span><span class="token punctuation">(</span><span class="token string">"D:\\HEXO\\HEXO\\themes\\hexo-theme-Mic_Theme\\source\\images\\tk"</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>   
+
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment" spellcheck="true">//此处作用是把处理后的字符串写入文件</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">writeFile</span><span class="token punctuation">(</span>String fileFullPath<span class="token punctuation">,</span>String content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//刚开始FileOutputStream中文会乱码，所以换成OutputStreamWriter</span>
+        <span class="token comment" spellcheck="true">//FileOutputStream fos = null;          </span>
+        OutputStreamWriter oStreamWriter <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//true不覆盖已有内容</span>
+            <span class="token comment" spellcheck="true">//fos = new FileOutputStream(fileFullPath, true);</span>
+            oStreamWriter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OutputStreamWriter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>fileFullPath<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//写入</span>
+            <span class="token comment" spellcheck="true">//fos.write(content.getBytes());</span>
+            oStreamWriter<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 写入一个换行</span>
+            <span class="token comment" spellcheck="true">//fos.write("\r\n\r\n".getBytes());</span>
+            oStreamWriter<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"\r\n\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+
+        <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">finally</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>oStreamWriter <span class="token operator">!=</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//fos.flush();</span>
+                    oStreamWriter<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//fos.close(); </span>
+                    oStreamWriter<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="这里是获取图片URL后用于下载图片到本地的class"><a href="#这里是获取图片URL后用于下载图片到本地的class" class="headerlink" title="这里是获取图片URL后用于下载图片到本地的class"></a><strong>这里是获取图片URL后用于下载图片到本地的class</strong></h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> Github<span class="token punctuation">.</span>lz632339942<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
