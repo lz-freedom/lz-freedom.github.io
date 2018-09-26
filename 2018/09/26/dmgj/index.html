@@ -96,130 +96,12 @@
 		
 <!-- Layouts -->
 
-    <!-- Single Links Page -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/demo.css">
-<style type="text/css">
-    .our-team {
-        padding: 30px 0 40px;
-        background: #f7f5ec;
-        text-align: center;
-        overflow: hidden;
-        position: relative;
-    }
 
-    .our-team .pic {
-        display: inline-block;
-        width: 130px;
-        height: 130px;
-        margin-bottom: 50px;
-        z-index: 1;
-        position: relative;
-    }
 
-    .our-team .pic:before {
-        content: "";
-        width: 100%;
-        height: 0;
-        border-radius: 50%;
-        background: #000000;
-        position: absolute;
-        bottom: 135%;
-        right: 0;
-        left: 0;
-        opacity: 0.2;
-        transform: scale(3);
-        transition: all 0.3s linear 0s;
-    }
-
-    .our-team:hover .pic:before {
-        height: 100%;
-    }
-
-    .our-team .pic:after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: #000000;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-
-    .our-team .pic img {
-        width: 100%;
-        height: auto;
-        border-radius: 50%;
-        transform: scale(1);
-        transition: all 0.9s ease 0s;
-    }
-
-    .our-team:hover .pic img {
-        box-shadow: 0 0 0 14px #f7f5ec;
-        transform: scale(0.7);
-    }
-
-    .our-team .team-content {
-        margin-bottom: 30px;
-    }
-
-    .our-team .title {
-        font-size: 22px;
-        font-weight: 700;
-        color: #4e5052;
-        letter-spacing: 1px;
-        text-transform: capitalize;
-        margin-bottom: 5px;
-    }
-
-    .our-team .post {
-        display: block;
-        font-size: 15px;
-        color: #4e5052;
-        text-transform: capitalize;
-    }
-
-    .our-team .social {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        background: #000;
-        position: absolute;
-        bottom: -100px;
-        left: 0;
-        transition: all 0.5s ease 0s;
-    }
-
-    .our-team:hover .social {
-        bottom: 0;
-    }
-
-    .our-team .social li {
-        display: inline-block;
-    }
-
-    .our-team .social li a {
-        display: block;
-        padding: 10px;
-        font-size: 17px;
-        color: #fff;
-        transition: all 0.3s ease 0s;
-    }
-
-    .our-team .social li a:hover {
-        color: #110;
-        background: #f7f5ec;
-    }
-
-    @media only screen and (max-width: 990px) {
-        .our-team {
-            margin-bottom: 30px;
-        }
-    }</style>
-
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
 <body class="is-loading">
     <!-- Wrapper 外包 s-->
     <div id="wrapper" class="fade-in">
@@ -229,8 +111,8 @@
         <header id="header">
     <a href="/" class="logo">Mr.刘</a>
 </header>
-            <!-- Nav 导航条 start -->
-            <nav id="nav" class="special" >
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
             <ul class="menu links" >
 			<!-- Homepage  主页  --> 
 			<li >
@@ -303,71 +185,51 @@
                     
 			</ul>
 </nav>
-                        <div id="main">
-            <!-- Main first s-->
-            <article id="me" class="panel">
-                <header style="color: #000000">
-                    <h1>刘先生的博客</h1>
-                    <p>记录小白变大牛</p>
-                </header>
-                <a href="" class="jumplink pic">
-                    <span class="arrow icon fa-chevron-right"><span></span></span>
-                    <img src="/images/me.jpg" alt="" />
-                </a>
-            </article>
-            <!-- Main first e-->
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://ww1.sinaimg.cn/large/005zWjpngy1fvmv4tyshgj30ok07sq37.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >大学生点名工具</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>#一个大学生点名工具</p>
+<hr>
+<h3 id="一步一步实现功能"><a href="#一步一步实现功能" class="headerlink" title="一步一步实现功能"></a><strong>一步一步实现功能</strong></h3><h3 id="1-先从自己班级开始"><a href="#1-先从自己班级开始" class="headerlink" title="1.先从自己班级开始"></a>1.先从自己班级开始</h3><p><img src="//ww1.sinaimg.cn/large/005zWjpngy1fvmtd901exj30j8032q2t.jpg" alt="cmd-markdown-logo"></p>
+<h3 id="2-然后通过晨跑Excel表获取数据，使用jxl工具获取，实现把班级变学校"><a href="#2-然后通过晨跑Excel表获取数据，使用jxl工具获取，实现把班级变学校" class="headerlink" title="2.然后通过晨跑Excel表获取数据，使用jxl工具获取，实现把班级变学校"></a>2.然后通过晨跑Excel表获取数据，使用jxl工具获取，实现把班级变学校</h3><p><img src="//ww1.sinaimg.cn/large/005zWjpngy1fvmtgc9qmlj310y158gn3.jpg" alt="cmd-markdown-logo"></p>
+<h3 id="3-本人直接在Android-Stdio里面直接用jxl工具会出错，报异常不执行，没办法，先用eclipse获取表格信息，然后写成xml数组形式再导入到项目values里"><a href="#3-本人直接在Android-Stdio里面直接用jxl工具会出错，报异常不执行，没办法，先用eclipse获取表格信息，然后写成xml数组形式再导入到项目values里" class="headerlink" title="3. 本人直接在Android Stdio里面直接用jxl工具会出错，报异常不执行，没办法，先用eclipse获取表格信息，然后写成xml数组形式再导入到项目values里"></a>3. 本人直接在Android Stdio里面直接用jxl工具会出错，报异常不执行，没办法，先用eclipse获取表格信息，然后写成xml数组形式再导入到项目values里</h3><h3 id="4-后面慢慢实现功能，AutoCompleteTextView及Listview绑定使用，部分参考Github的开发者代码"><a href="#4-后面慢慢实现功能，AutoCompleteTextView及Listview绑定使用，部分参考Github的开发者代码" class="headerlink" title="4.后面慢慢实现功能，AutoCompleteTextView及Listview绑定使用，部分参考Github的开发者代码"></a>4.后面慢慢实现功能，AutoCompleteTextView及Listview绑定使用，部分参考Github的开发者代码</h3><h3 id="5-源码地址，Github…"><a href="#5-源码地址，Github…" class="headerlink" title="5.源码地址，Github…"></a>5.<a href="https://github.com/lz632339942/dmgj">源码地址，Github…</a></h3><h3 id="数据来自—淮南联合大学个人出勤汇总-2017-2018学年）表"><a href="#数据来自—淮南联合大学个人出勤汇总-2017-2018学年）表" class="headerlink" title="数据来自—淮南联合大学个人出勤汇总(2017-2018学年）表"></a><strong>数据来自—淮南联合大学个人出勤汇总(2017-2018学年）表</strong></h3><h2 id="欢迎大家提出不足的地方"><a href="#欢迎大家提出不足的地方" class="headerlink" title="欢迎大家提出不足的地方"></a><strong>欢迎大家提出不足的地方</strong></h2><p>#程序界面<br><img src="//ww1.sinaimg.cn/large/005zWjpngy1fvmtt5ky8aj30u01qgkjn.jpg" alt="cmd-markdown-logo"><br><img src="//ww1.sinaimg.cn/large/005zWjpngy1fvmtu3z5zij30u01qgt9n.jpg" alt="cmd-markdown-logo"><br><img src="//ww1.sinaimg.cn/large/005zWjpngy1fvmtuh6xklj30u01qggpf.jpg" alt="cmd-markdown-logo"><br><img src="//ww1.sinaimg.cn/large/005zWjpngy1fvmtusk7r9j30u01qg77y.jpg" alt="cmd-markdown-logo"><br><img src="//ww1.sinaimg.cn/large/005zWjpngy1fvmtv89w1bj30u01qg40b.jpg" alt="cmd-markdown-logo"><br><img src="//ww1.sinaimg.cn/large/005zWjpngy1fvmtvodip9j30u01qggoc.jpg" alt="cmd-markdown-logo"><br><img src="//ww1.sinaimg.cn/large/005zWjpngy1fvmtvx6jm9j30u01qg77d.jpg" alt="cmd-markdown-logo"></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: true,
+        verify: false,
+        app_id: 'fYqe4Qi8CAWvxUTnK8pj1rxl-gzGzoHsz',
+        app_key: 'Kp3yDvgYtVp355y6KBo6pQzj',
+        placeholder: 'Please leave your footprints',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/'
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
         </div>
-                    <div class="demo">
-                        <div class="container">
-                            <div class="row">
-                                
-                                    
-                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
-                                            <div class="our-team">
-                                                <div class="pic">
-                                                    <img src="http://onh0umlhz.bkt.clouddn.com/PS0611sahnghai.png">
-                                                </div>
-                                                <div class="team-content">
-                                                    <h3 class="title">名称1</h3>
-                                                    <Span class="post">示范点</Span>
-                                                </div>
-                                                <ul class="social">
-                                                    
-                                                        <li><a href="http://onh0umlhz.bkt.clouddn.com/PS0611sahnghai.png" class="fa fa-link"></a></li>
-                                                    
-                                                    
-                                                    
-                                                    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
-                                            <div class="our-team">
-                                                <div class="pic">
-                                                    <img src="http://onh0umlhz.bkt.clouddn.com/PS0611sahnghai.png">
-                                                </div>
-                                                <div class="team-content">
-                                                    <h3 class="title">名称2</h3>
-                                                    <Span class="post">大师傅但是</Span>
-                                                </div>
-                                                <ul class="social">
-                                                    
-                                                        <li><a href="http://onh0umlhz.bkt.clouddn.com/PS0611sahnghai.png" class="fa fa-link"></a></li>
-                                                    
-                                                    
-                                                    
-                                                    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        
-                                            
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Copyright 版权 start -->
-                            <div id="copyright">
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
             <ul>
                 <li>&copy;Powered By <a href="https://github.com/lz632339942" target="_blank" style="border-bottom: none;">LZ</a></li>
                 <li>Templates: <a href="https://github.com/miccall" target="_blank" style="border-bottom: none;">miccall</a></li>
@@ -378,6 +240,7 @@
         </div>
     </div>
 </body>
+
 
 
  	
